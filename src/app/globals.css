@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: #faf9f6;
+  color: #1a1917;
+  font-family: var(--font-sans);
+}
+
+/* Eyebrow / data label — the mono utility voice */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #9c988e;
+}
+
+.tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+.display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+}
+
+/* Thin, quiet scrollbars for the enterprise register */
+::-webkit-scrollbar { height: 8px; width: 8px; }
+::-webkit-scrollbar-thumb { background: #e7e4dc; border-radius: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+/* Hairline dividers */
+.hair { border-color: #efede7; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+.fade-in { animation: fade 0.5s ease both; }
+@keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+/* Focus ring — accessible, restrained */
+:focus-visible { outline: 2px solid #6b2333; outline-offset: 2px; border-radius: 4px; }
